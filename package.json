@@ -1,0 +1,16 @@
+{
+  "name": "knex_paises",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nick bouldien",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^17.7.0",
+    "knex": "^0.15.2",
+    "pg": "^7.6.1"
+  }
+}
