@@ -1,11 +1,20 @@
 const Hapi = require('hapi');
 const Boom = require('boom');
-const sampleData = require('./sampleData');
+const Joi = require('joi');
+
+const get_countries = require('./api/countries/routes/get_countries');
+const get_country = require('./api/countries/routes/get_country');
 
 const isDev = process.env.NODE_ENV !== "production";
 
 const PORT = process.env.PORT || 8080;
 const HOST = isDev ? "localhost" : "/";
+
+// const personValidator = Joi.object({
+//   country: Joi.string().required(),
+//   name: Joi.string().required(),
+//   profession: Joi.string().required(),
+// });
 
 const server = Hapi.server({
   port: PORT,
@@ -20,35 +29,20 @@ server.route({
   }
 });
 
+/* test route */
 server.route({
   method: ['GET', 'POST'],
   path: '/api/test',
   handler: function (request, h) {
+    // TODO - reply with request method
     const successObj = { 'success!': true };
     return JSON.stringify(successObj);
   }
 });
 
-server.route({
-  method: 'GET',
-  path: '/countries/{id}',
-  handler: function (request, h) {
-    const country = sampleData.find(country => country.id === Number(request.params.id) );
-    // const sortKey = request.query.sortKey;
-    if (!country) {
-      return Boom.notFound(`Country with id ${request.params.id} not found!`);
-    }
-    return country;
-  }
-});
-
-server.route({
-  method: 'GET',
-  path: '/countries',
-  handler: function (request, h) {
-    return sampleData;
-  }
-});
+/* country routes */
+server.route(get_country);
+server.route(get_countries);
 
 const start = async () => {
   await server.start();
