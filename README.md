@@ -23,6 +23,19 @@
       		"population": 654654654654
       	}
       '        
+- GET - person:
+    - curl --request GET --url http://localhost:8080/people/{person_id}
+- GET - people:
+    - curl --request GET --url http://localhost:8080/people
+- POST - people:
+    - curl --request POST \
+        --url http://localhost:8080/person \
+        --header 'content-type: application/json' \
+        --data '{
+      	"name": "Elvis",
+      	"profession": "singer",
+      	"country": "United States of America"
+      }'
         
 #### TODOs:
 - use knex / objection.js
