@@ -1,5 +1,5 @@
 const Boom = require('boom');
-const countryData = require('../../../sampleCountries');
+const countryData = require('../../../sampleData/sampleCountries');
 
 const getCountry = {
   method: 'GET',

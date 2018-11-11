@@ -1,5 +1,5 @@
 const Boom = require('boom');
-const personData = require('../../../samplePeople');
+const personData = require('../../../sampleData/samplePeople');
 const { personValidator } = require('../validations/post_person');
 
 const postPerson = {

@@ -1,4 +1,4 @@
-const countryData = require('../../../sampleCountries');
+const countryData = require('../../../sampleData/sampleCountries');
 
 const getCountries = {
   method: 'GET',
