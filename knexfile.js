@@ -2,6 +2,8 @@ const database = process.env.DATABASE_NAME || "test_knex_db";
 const user = process.env.DATABASE_USER || "postgres";
 const password = process.env.DATABASE_PASSWORD || "nick";
 
+const DEBUG = process.env.NODE_ENV !== 'production';
+
 console.dir({
   "db ": "info",
   database,
@@ -19,7 +21,7 @@ module.exports = {
       user,
       password,
     },
-    // debug: true,
+    debug: DEBUG,
     // migrations: { tableName: 'knex_migrations' },
     // seeds: { tableName: './seeds' },
     migrations: {
