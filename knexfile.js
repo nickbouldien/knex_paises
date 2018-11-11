@@ -1,8 +1,9 @@
-const database = process.env.DATABASE_NAME || "test_knex_dtexb";
-const user = process.env.DATABASE_USER || "nick";
-const password = process.env.DATABASE_PASSWORD || "password";
+const database = process.env.DATABASE_NAME || "test_knex_db";
+const user = process.env.DATABASE_USER || "postgres";
+const password = process.env.DATABASE_PASSWORD || "nick";
 
 console.dir({
+  "db ": "info",
   database,
   user,
   password,
