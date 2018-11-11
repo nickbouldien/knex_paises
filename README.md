@@ -1,9 +1,11 @@
 # Knex Países
 
+
 #### Start Dev:
 - clone/fork
 - npm install
 - npm run dev
+
 
 #### Sample Queries (using localhost):
 - GET - country:
@@ -36,12 +38,23 @@
       	"profession": "singer",
       	"country": "United States of America"
       }'
+
         
+#### Knex setup:
+- knex init
+- configure knexfile.js
+
+
 #### TODOs:
 - use knex / objection.js
 - add logging
 - add swagger docs
 - add tests
 
+
 #### Resources:
 - [hapi docs](https://hapijs.com/)
+- [knex docs](https://knexjs.org)
+- [knex setup gist by Nigel Earle](https://gist.github.com/NigelEarle/80150ff1c50031e59b872baf0e474977)
+- [scotch.io tutorial hapi/knex](https://scotch.io/tutorials/making-a-restful-api-with-hapi-js)
+- [mls tutorial on hapi](https://labs.mlssoccer.com/how-to-be-a-hapi-developer-8bb844b3d6a)
