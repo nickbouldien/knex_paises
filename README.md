@@ -43,8 +43,10 @@
 #### Knex setup:
 - knex init
 - configure knexfile.js
-- cd to knex/migrations/ and `knex migrate:make new_migration`
-- edit migration file and `knex migrate:latest`
+- cd to knex/migrations/ and run `knex migrate:make new_migration`
+- edit migration file and run `knex migrate:latest`
+- seed: cd to knex/seeds and run `knex seed:make new_seed`
+- edit seed file and run `knex see:run`
 
 
 #### TODOs:
