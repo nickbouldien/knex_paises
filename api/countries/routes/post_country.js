@@ -9,6 +9,7 @@ const postCountry = {
     // pre: [
     //   { method: query.verifyUniqueCountry },
     // ],
+    tags: ['api', 'country'],
     validate: {
       payload: countryValidator,
     },
