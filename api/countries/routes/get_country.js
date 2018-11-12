@@ -1,12 +1,12 @@
 const Boom = require('boom');
-const countryData = require('../../../sampleData/sampleCountries');
+const knex = require('../../../knex');
 
 const getCountry = {
   method: 'GET',
   path: '/countries/{id}',
-  handler: function (request, h) {
-    const country = countryData.find(country => country.id === Number(request.params.id) );
-    if (!country) {
+  handler: async function (request, h) {
+    const country = await knex.select('*').from('country').where('id', request.params.id);
+    if (!country || !country.length) {
       return Boom.notFound(`Country with id ${request.params.id} not found!`);
     }
     return country;

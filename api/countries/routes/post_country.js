@@ -1,5 +1,5 @@
 const Boom = require('boom');
-const countryData = require('../../../sampleData/sampleCountries');
+const knex = require('../../../knex');
 const { countryValidator } = require('../validations/post_country');
 
 const postCountry = {
@@ -12,14 +12,12 @@ const postCountry = {
     validate: {
       payload: countryValidator,
     },
-    handler: function (request, h) {
+    handler: async function (request, h) {
       let submittedData = request.payload;
-      const id = countryData.length + 1;
-      submittedData.id = id;
-      countryData.push(submittedData);
-      const country = countryData.find(country => country.id === id);
 
-      if (!country) {
+      const country = await knex('country').insert(submittedData).returning('*');
+
+      if (!country || !country.length) { // FIXME - best way to do this??
         return Boom.notFound(`Country with id ${request.params.id} not found!`);
       }
       return country;

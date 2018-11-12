@@ -22,8 +22,6 @@ module.exports = {
       password,
     },
     debug: DEBUG,
-    // migrations: { tableName: 'knex_migrations' },
-    // seeds: { tableName: './seeds' },
     migrations: {
       directory: __dirname + '/knex/migrations',
     },

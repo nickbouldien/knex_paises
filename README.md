@@ -4,6 +4,8 @@
 #### Start Dev:
 - clone/fork
 - npm install
+- npm run migrate-latest
+- npm run seed
 - npm run dev
 
 
@@ -46,11 +48,11 @@
 - cd to knex/migrations/ and run `knex migrate:make new_migration`
 - edit migration file and run `knex migrate:latest`
 - seed: cd to knex/seeds and run `knex seed:make new_seed`
-- edit seed file and run `knex see:run`
+- edit seed file and run `knex seed:run`
 
 
 #### TODOs:
-- use knex / objection.js
+- ~~use knex~~
 - add logging
 - add swagger docs
 - add tests
