@@ -1,11 +1,7 @@
 const Hapi = require('hapi');
 
-const get_countries = require('./api/countries/routes/get_countries');
-const get_country = require('./api/countries/routes/get_country');
-const post_country = require('./api/countries/routes/post_country');
-const get_people = require('./api/people/routes/get_people');
-const get_person = require('./api/people/routes/get_person');
-const post_person = require('./api/people/routes/post_person');
+const { get_countries, get_country, post_country} = require('./api/countries');
+const { get_people, get_person, post_person} = require('./api/people');
 
 const isDev = process.env.NODE_ENV !== "production";
 
