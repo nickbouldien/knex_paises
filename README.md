@@ -1,5 +1,5 @@
-# Knex Países
-
+# Knex Países - People
+Just a simple api messing around with Hapi and its ecosystem (dealing with famous people from different countries).
 
 #### Start Dev:
 - clone/fork
@@ -7,6 +7,15 @@
 - npm run migrate-latest
 - npm run seed
 - npm run dev
+
+
+#### Knex setup:
+- knex init
+- configure knexfile.js
+- cd to knex/migrations/ and run `knex migrate:make new_migration`
+- edit migration file and run `knex migrate:latest`
+- seed: cd to knex/seeds and run `knex seed:make new_seed`
+- edit seed file and run `knex seed:run`
 
 
 #### Sample Queries (using localhost):
@@ -41,20 +50,11 @@
       	"country": "United States of America"
       }'
 
-        
-#### Knex setup:
-- knex init
-- configure knexfile.js
-- cd to knex/migrations/ and run `knex migrate:make new_migration`
-- edit migration file and run `knex migrate:latest`
-- seed: cd to knex/seeds and run `knex seed:make new_seed`
-- edit seed file and run `knex seed:run`
-
 
 #### TODOs:
 - ~~use knex~~
+- ~~add swagger docs~~
 - add logging
-- add swagger docs
 - add tests
 
 
