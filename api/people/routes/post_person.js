@@ -10,6 +10,7 @@ const postPerson = {
     // pre: [
     //   { method: query.verifyUniquePerson },
     // ],
+    tags: ['api', 'people'],
     validate: {
       payload: personValidator,
     },
