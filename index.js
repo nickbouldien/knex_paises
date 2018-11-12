@@ -61,7 +61,7 @@ server.route(post_person);
 
 const start = async () => {
   await server.start();
-  console.log(`server running at: ${server.info.uri}`);
+  console.log(`server running at: ${server.info.uri}. Dev mode === ${isDev}`);
 };
 
 process.on('unhandledRejection', (err) => {

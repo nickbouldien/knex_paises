@@ -1,10 +1,10 @@
-const personData = require('../../../sampleData/samplePeople');
+const knex = require('../../../knex');
 
 const getPeople = {
   method: 'GET',
   path: '/people',
   handler: function (request, h) {
-    return personData;
+    return knex.select('*').from('person');
   }
 };
 

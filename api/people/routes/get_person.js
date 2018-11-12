@@ -1,12 +1,13 @@
 const Boom = require('boom');
-const personData = require('../../../sampleData/samplePeople');
+const knex = require('../../../knex');
 
 const getPerson = {
   method: 'GET',
   path: '/people/{id}',
-  handler: function (request, h) {
-    const person = personData.find(person => person.id === Number(request.params.id) );
-    if (!person) {
+  handler: async function (request, h) {
+    const person = await knex.select('*').from('person').where('id', request.params.id);
+
+    if (!person || !person.length) {
       return Boom.notFound(`Person with id ${request.params.id} not found!`);
     }
     return person;
