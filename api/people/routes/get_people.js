@@ -2,7 +2,7 @@ const knex = require('../../../knex');
 
 const getPeople = {
   method: 'GET',
-  path: '/people',
+  path: '/api/v1/people',
   options: {
     tags: ['api', 'people'],
     handler: function (request, h) {

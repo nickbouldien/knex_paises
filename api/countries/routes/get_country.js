@@ -3,7 +3,7 @@ const knex = require('../../../knex');
 
 const getCountry = {
   method: 'GET',
-  path: '/countries/{id}',
+  path: '/api/v1/countries/{id}',
   options: {
     tags: ['api', 'country'],
     handler: async function (request, h) {

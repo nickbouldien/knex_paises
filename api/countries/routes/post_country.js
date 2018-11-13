@@ -4,7 +4,7 @@ const { countryValidator } = require('../validations/post_country');
 
 const postCountry = {
   method: 'POST',
-  path: '/countries',
+  path: '/api/v1/countries',
   options: {
     // pre: [
     //   { method: query.verifyUniqueCountry },

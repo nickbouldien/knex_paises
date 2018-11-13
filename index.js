@@ -55,8 +55,8 @@ server.route({
   method: ['GET', 'POST'],
   path: '/api/test',
   handler: function (request, h) {
-    // TODO - reply with request method
-    const successObj = { 'success!': true };
+    const reqMethod = request.method;
+    const successObj = { 'success': `method: ${reqMethod}` };
     return JSON.stringify(successObj);
   }
 });

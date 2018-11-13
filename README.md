@@ -7,7 +7,7 @@ Just a simple api messing around with Hapi and its ecosystem (dealing with famou
 - npm run migrate-latest
 - npm run seed
 - npm run dev
-
+- can view [swagger docs](http://localhost:8080/documentation)
 
 #### Knex setup:
 - knex init
@@ -20,12 +20,12 @@ Just a simple api messing around with Hapi and its ecosystem (dealing with famou
 
 #### Sample Queries (using localhost):
 - GET - country:
-    - curl --request GET --url http://localhost:8080/countries/{country_id}
+    - curl --request GET --url http://localhost:8080/api/v1/countries/{country_id}
 - GET - countries:
-    - curl --request GET --url http://localhost:8080/countries
+    - curl --request GET --url http://localhost:8080/api/v1/countries
 - POST - countries:
     - curl --request POST \
-        --url http://localhost:8080/countries \
+        --url http://localhost:8080/api/v1/countries \
         --header 'content-type: application/json' \
         --data '{
       		"area": 12341234,
@@ -37,12 +37,12 @@ Just a simple api messing around with Hapi and its ecosystem (dealing with famou
       	}
       '        
 - GET - person:
-    - curl --request GET --url http://localhost:8080/people/{person_id}
+    - curl --request GET --url http://localhost:8080/api/v1/people/{person_id}
 - GET - people:
-    - curl --request GET --url http://localhost:8080/people
+    - curl --request GET --url http://localhost:8080/api/v1/people
 - POST - people:
     - curl --request POST \
-        --url http://localhost:8080/person \
+        --url http://localhost:8080/api/v1/person \
         --header 'content-type: application/json' \
         --data '{
       	"name": "Elvis",
@@ -55,6 +55,8 @@ Just a simple api messing around with Hapi and its ecosystem (dealing with famou
 - ~~use knex~~
 - ~~add swagger docs~~
 - add logging
+- add caching
+- add prettier
 - add tests
 
 

@@ -5,7 +5,7 @@ const { personValidator } = require('../validations/post_person');
 
 const postPerson = {
   method: 'POST',
-  path: '/people',
+  path: '/api/v1/people',
   options: {
     // pre: [
     //   { method: query.verifyUniquePerson },
