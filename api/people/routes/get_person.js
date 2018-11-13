@@ -8,9 +8,10 @@ const getPerson = {
     tags: ["api", "people"],
     handler: async function(request, h) {
       const person = await knex
-        .select("*")
+        .select("person.name", "person.profession", "country.name as countryName")
         .from("person")
-        .where("id", request.params.id);
+        .join("country", "person.countryId", "=", "country.id")
+        .where("person.id", request.params.id);
 
       if (!person || !person.length) {
         return Boom.notFound(`Person with id ${request.params.id} not found!`);

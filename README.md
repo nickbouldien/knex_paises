@@ -1,5 +1,5 @@
 # Knex Países - People
-Just a simple api messing around with Hapi and its ecosystem ("theme" deals with famous people from different countries).
+Just a simple api messing around with Hapi and its ecosystem. (I had always heard good things about Hapi, but never used it, so I made an excuse to mess around with it for a few days (with Knex - another library I had read good things about).  The "theme" deals with famous people from different countries (países)).
 
 #### Start Dev:
 - clone/fork
@@ -56,6 +56,7 @@ Just a simple api messing around with Hapi and its ecosystem ("theme" deals with
 - ~~add swagger docs~~
 - ~~add prettier~~
 - add tests
+- add graphql???
 
 
 #### Resources:
