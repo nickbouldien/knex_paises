@@ -54,9 +54,7 @@ Just a simple api messing around with Hapi and its ecosystem ("theme" deals with
 #### TODOs:
 - ~~use knex~~
 - ~~add swagger docs~~
-- add logging
-- add caching
-- add prettier
+- ~~add prettier~~
 - add tests
 
 
