@@ -1,11 +1,11 @@
-const Blipp = require('blipp');
-const Hapi = require('hapi');
-const HapiSwagger = require('hapi-swagger');
-const Inert = require('inert');
-const Vision = require('vision');
+const Blipp = require("blipp");
+const Hapi = require("hapi");
+const HapiSwagger = require("hapi-swagger");
+const Inert = require("inert");
+const Vision = require("vision");
 
-const { get_countries, get_country, post_country} = require('./api/countries');
-const { get_people, get_person, post_person} = require('./api/people');
+const { get_countries, get_country, post_country } = require("./api/countries");
+const { get_people, get_person, post_person } = require("./api/people");
 
 const isDev = process.env.NODE_ENV !== "production";
 
@@ -17,8 +17,8 @@ let swaggerOptions = {
   debug: isDev,
   tags: [
     {
-      name: 'country',
-      description: 'country routes',
+      name: "country",
+      description: "country routes",
     },
   ],
   jsonEditor: true,
@@ -30,35 +30,35 @@ const server = Hapi.server({
   routes: {
     validate: {
       failAction: async (request, h, err) => {
-        if ( !isDev ) {
-          console.error('ValidationError:', err.message);
+        if (!isDev) {
+          console.error("ValidationError:", err.message);
           throw Boom.badRequest(`Invalid request payload input`);
         } else {
           console.error(err);
           throw err;
         }
-      }
-    }
-  }
+      },
+    },
+  },
 });
 
 server.route({
-  method: 'GET',
-  path: '/',
-  handler: function (request, h) {
-    return 'hello world!';
-  }
+  method: "GET",
+  path: "/",
+  handler: function(request, h) {
+    return "hello world!";
+  },
 });
 
 /* test route */
 server.route({
-  method: ['GET', 'POST'],
-  path: '/api/test',
-  handler: function (request, h) {
+  method: ["GET", "POST"],
+  path: "/api/test",
+  handler: function(request, h) {
     const reqMethod = request.method;
-    const successObj = { 'success': `method: ${reqMethod}` };
+    const successObj = { success: `method: ${reqMethod}` };
     return JSON.stringify(successObj);
-  }
+  },
 });
 
 /* country routes */
@@ -78,15 +78,15 @@ const start = async () => {
     Blipp,
     {
       plugin: HapiSwagger,
-      options: swaggerOptions
-    }
+      options: swaggerOptions,
+    },
   ]);
 
   await server.start();
   console.log(`server running at: ${server.info.uri}. Dev mode === ${isDev}`);
 };
 
-process.on('unhandledRejection', (err) => {
+process.on("unhandledRejection", err => {
   console.error(err);
   process.exit(1);
 });
