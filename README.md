@@ -1,5 +1,5 @@
 # Knex Países - People
-Just a simple api messing around with Hapi and its ecosystem (dealing with famous people from different countries).
+Just a simple api messing around with Hapi and its ecosystem ("theme" deals with famous people from different countries).
 
 #### Start Dev:
 - clone/fork
