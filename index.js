@@ -3,6 +3,7 @@ const Hapi = require("hapi");
 const HapiSwagger = require("hapi-swagger");
 const Inert = require("inert");
 const Vision = require("vision");
+require("dotenv").config();
 
 const { get_countries, get_country, post_country } = require("./api/countries");
 const { get_people, get_person, post_person } = require("./api/people");

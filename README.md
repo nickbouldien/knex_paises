@@ -55,6 +55,7 @@ Just a simple api messing around with Hapi and its ecosystem. (I had always hear
 - ~~use knex~~
 - ~~add swagger docs~~
 - ~~add prettier~~
+- ~~add dotenv~~
 - add tests
 - add graphql???
 
