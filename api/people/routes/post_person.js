@@ -1,25 +1,27 @@
 const Boom = require('boom');
-const personData = require('../../../samplePeople');
+const knex = require('../../../knex');
+
 const { personValidator } = require('../validations/post_person');
 
 const postPerson = {
   method: 'POST',
-  path: '/people',
+  path: '/api/v1/people',
   options: {
     // pre: [
     //   { method: query.verifyUniquePerson },
     // ],
+    tags: ['api', 'people'],
     validate: {
       payload: personValidator,
     },
-    handler: function (request, h) {
+    handler: async function (request, h) {
       let submittedData = request.payload;
-      const id = personData.length + 1;
-      submittedData.id = id;
-      personData.push(submittedData);
-      const person = personData.find(person => person.id === id);
 
-      if (!person) {
+      const person = await knex('person').insert(submittedData).returning('*');
+
+      console.log("person, ", person);
+
+      if (!person || !person.length) { // FIXME - best way to do this??
         return Boom.notFound(`Person with id ${request.params.id} not found!`);
       }
       return person;
