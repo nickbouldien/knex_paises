@@ -53,6 +53,14 @@ server.route({
   },
 });
 
+server.route({
+  method: "GET",
+  path: "/api/v1/files/{filename}",
+  handler: function(request, h) {
+    return h.file(`./sampleData/${request.params.filename}.js`);
+  },
+});
+
 /* country routes */
 server.route(get_country);
 server.route(get_countries);
