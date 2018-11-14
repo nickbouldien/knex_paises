@@ -3,6 +3,7 @@ const Hapi = require("hapi");
 const HapiSwagger = require("hapi-swagger");
 const Inert = require("inert");
 const Vision = require("vision");
+require("dotenv").config();
 
 const { get_countries, get_country, post_country } = require("./api/countries");
 const { get_people, get_person, post_person } = require("./api/people");
@@ -13,7 +14,6 @@ const port = process.env.PORT || 8080;
 const host = isDev ? "localhost" : "/";
 
 let swaggerOptions = {
-  // basePath: '/v1',
   debug: isDev,
   tags: [
     {
@@ -42,14 +42,6 @@ const server = Hapi.server({
   },
 });
 
-server.route({
-  method: "GET",
-  path: "/",
-  handler: function(request, h) {
-    return "hello world!";
-  },
-});
-
 /* test route */
 server.route({
   method: ["GET", "POST"],
@@ -58,6 +50,14 @@ server.route({
     const reqMethod = request.method;
     const successObj = { success: `method: ${reqMethod}` };
     return JSON.stringify(successObj);
+  },
+});
+
+server.route({
+  method: "GET",
+  path: "/api/v1/files/{filename}",
+  handler: function(request, h) {
+    return h.file(`./sampleData/${request.params.filename}.js`);
   },
 });
 

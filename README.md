@@ -1,5 +1,5 @@
 # Knex Países - People
-Just a simple api messing around with Hapi and its ecosystem ("theme" deals with famous people from different countries).
+Just a simple api messing around with Hapi and its ecosystem. (I had always heard good things about Hapi, but never used it, so I made an excuse to mess around with it for a few days (with Knex - another library I had read good things about).  The "theme" deals with famous people from different countries (países)).
 
 #### Start Dev:
 - clone/fork
@@ -7,7 +7,8 @@ Just a simple api messing around with Hapi and its ecosystem ("theme" deals with
 - npm run migrate-latest
 - npm run seed
 - npm run dev
-- can view [swagger docs](http://localhost:8080/documentation)
+- can view [swagger docs](http://localhost:8080/documentation) to see available routes
+
 
 #### Knex setup:
 - knex init
@@ -55,7 +56,9 @@ Just a simple api messing around with Hapi and its ecosystem ("theme" deals with
 - ~~use knex~~
 - ~~add swagger docs~~
 - ~~add prettier~~
+- ~~add dotenv~~
 - add tests
+- add graphql???
 
 
 #### Resources:

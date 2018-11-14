@@ -8,14 +8,14 @@
     "migrate-latest": "knex migrate:latest",
     "rollback": "knex migrate:rollback",
     "seed": "knex seed:run",
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "nick bouldien",
   "license": "ISC",
   "dependencies": {
     "blipp": "^3.1.1",
     "boom": "^7.2.2",
+    "dotenv": "^6.1.0",
     "hapi": "^17.7.0",
     "hapi-swagger": "^9.1.2",
     "inert": "^5.1.2",
