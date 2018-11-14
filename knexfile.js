@@ -5,7 +5,7 @@ const password = process.env.DATABASE_PASSWORD || "";
 const DEBUG = process.env.NODE_ENV !== "production";
 
 console.dir({
-  "db ": "info",
+  knexfile_data: "info",
   database,
   user,
   password,
@@ -34,7 +34,7 @@ module.exports = {
   production: {
     client: "postgresql",
     connection: {
-      database: "____",
+      database: process.env.DATABASE_CONNECTION_STRING || "",
     },
     pool: {
       min: process.env.DATABASE_POOL_MIN || 2,

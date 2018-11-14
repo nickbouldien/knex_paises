@@ -21,8 +21,6 @@ const postPerson = {
         .insert(submittedData)
         .returning("*");
 
-      console.log("person, ", person);
-
       if (!person || !person.length) {
         // FIXME - best way to do this??
         return Boom.notFound(`Person with id ${request.params.id} not found!`);

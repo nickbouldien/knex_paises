@@ -14,7 +14,6 @@ const port = process.env.PORT || 8080;
 const host = isDev ? "localhost" : "/";
 
 let swaggerOptions = {
-  // basePath: '/v1',
   debug: isDev,
   tags: [
     {
@@ -40,14 +39,6 @@ const server = Hapi.server({
         }
       },
     },
-  },
-});
-
-server.route({
-  method: "GET",
-  path: "/",
-  handler: function(request, h) {
-    return "hello world!";
   },
 });
 
